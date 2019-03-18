@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
+import RegisterForm from './components/RegisterForm';
 
 class App extends Component {
+  submit = values => {
+    window.alert(JSON.stringify(values, null, 4));
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <RegisterForm onSubmit={this.submit} />
     );
   }
 }
