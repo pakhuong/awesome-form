@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { customInput, customSelect } from './fields';
 
 class RegisterForm extends Component {
     render() {
@@ -8,20 +9,13 @@ class RegisterForm extends Component {
         return (
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Name</label>
-                    <Field name="name" component="input" type="text" />
+                    <Field name="name" component={customInput} type="text" label="Name" />
                 </div>
                 <div>
-                    <label>Preferred Formatting</label>
-                    <Field name="preference" component="select">
-                        <option />
-                        <option value="tabs">Tabs</option>
-                        <option value="spaces">Spaces</option>
-                    </Field>
+                    <Field name="preference" component={customSelect} label="Preferred Formatting" />
                 </div>
                 <div>
-                    <label>Sign up to newsletter?</label>
-                    <Field name="newsletter" component="input" type="checkbox" />
+                    <Field name="newsletter" component={customInput} type="checkbox" label="Sign up to Newsletter?" />
                 </div>
                 <button type="submit">Submit</button>
             </form>
